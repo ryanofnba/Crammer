@@ -8,5 +8,5 @@ This is a senior project for Cal Poly Spring 2016 collaboratively worked on by:
 
 ## Platform
 * iOS
-** XCode 7
-** Swift 2
+..* XCode 7
+..*Swift 2

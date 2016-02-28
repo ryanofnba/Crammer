@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "6665DB7CCD020A2141B68AABC7D8155E24D9424C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "6FE5E0B6D2BA4F53B8D5C8DB25B940EA34380B5E" : 0,
+    "6665DB7CCD020A2141B68AABC7D8155E24D9424C" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "3C33F47E-E486-4B35-B445-A629D36CDBC4",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "6FE5E0B6D2BA4F53B8D5C8DB25B940EA34380B5E" : "",
+    "6665DB7CCD020A2141B68AABC7D8155E24D9424C" : "StudyBuddy\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ParseStarterProject",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ParseStarterProject.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ryanofnba\/Crammer.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6665DB7CCD020A2141B68AABC7D8155E24D9424C"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ryanofnba\/Crammer.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6FE5E0B6D2BA4F53B8D5C8DB25B940EA34380B5E"
+    }
+  ]
+}

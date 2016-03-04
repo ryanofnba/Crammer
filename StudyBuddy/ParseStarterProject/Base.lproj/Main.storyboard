@@ -498,14 +498,18 @@
                     <connections>
                         <outlet property="interestedInGirl" destination="wea-eG-pmF" id="JyR-hf-4QI"/>
                         <outlet property="userImage" destination="HQf-z6-ege" id="FT8-GI-Vpb"/>
+                        <segue destination="oPv-9n-G46" kind="show" identifier="showSwipeScreen" id="LsK-eU-QQc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lCF-Y6-Ic5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1390" y="587"/>
+            <point key="canvasLocation" x="1626" y="766"/>
         </scene>
     </scenes>
     <resources>
         <image name="signinwithfacebook.png" width="300" height="46"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="LsK-eU-QQc"/>
+    </inferredMetricsTieBreakers>
 </document>

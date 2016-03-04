@@ -19,6 +19,8 @@ class SignUpViewController: UIViewController {
         
         PFUser.currentUser()?["interestedInGirl"] = interestedInGirl.on
         PFUser.currentUser()?.save()
+        self.performSegueWithIdentifier("showSwipeScreen", sender: self)
+        
     }
     
     

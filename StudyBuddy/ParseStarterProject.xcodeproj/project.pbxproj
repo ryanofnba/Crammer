@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DA411B81C8918EF004B110B /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA411B71C8918EF004B110B /* FBSDKCoreKit.framework */; };
+		1DA411BA1C8918F8004B110B /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA411B91C8918F8004B110B /* FBSDKLoginKit.framework */; };
 		1DC8C4D61C856EA300B5BDE8 /* MainSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC8C4D51C856EA300B5BDE8 /* MainSettings.swift */; };
 		81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BA814A1A49DA1800E65899 /* AppDelegate.swift */; };
 		81BA814D1A49DA1800E65899 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BA814C1A49DA1800E65899 /* ViewController.swift */; };
@@ -20,8 +22,6 @@
 		81BA817B1A49E0E500E65899 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA817A1A49E0E500E65899 /* SystemConfiguration.framework */; };
 		81BA817F1A49E0F000E65899 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA817E1A49E0F000E65899 /* libstdc++.6.dylib */; };
 		81BA81811A49E10C00E65899 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA81801A49E10C00E65899 /* ParseUI.framework */; };
-		94D1C2D91C82829400C27067 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D1C2D71C82829400C27067 /* FBSDKCoreKit.framework */; };
-		94D1C2DA1C82829400C27067 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D1C2D81C82829400C27067 /* FBSDKLoginKit.framework */; };
 		94F9657F1C7EE88100772EAE /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F9657E1C7EE88100772EAE /* ParseFacebookUtilsV4.framework */; };
 		94F965BB1C7F821700772EAE /* signinwithfacebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 94F965BA1C7F821700772EAE /* signinwithfacebook.png */; };
 		94F965BD1C7F85AC00772EAE /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F965BC1C7F85AC00772EAE /* SignUpViewController.swift */; };
@@ -29,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1DA411B71C8918EF004B110B /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		1DA411B91C8918F8004B110B /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		1DC8C4D51C856EA300B5BDE8 /* MainSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainSettings.swift; sourceTree = "<group>"; };
 		81BA81451A49DA1800E65899 /* ParseStarterProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParseStarterProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81BA81491A49DA1800E65899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,8 +47,6 @@
 		81BA817E1A49E0F000E65899 /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
 		81BA81801A49E10C00E65899 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		81BA81821A49E27F00E65899 /* ParseStarterProject-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ParseStarterProject-Bridging-Header.h"; sourceTree = "<group>"; };
-		94D1C2D71C82829400C27067 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../../FacebookSDKs-iOS-20160210/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
-		94D1C2D81C82829400C27067 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../FacebookSDKs-iOS-20160210/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
 		94F9657E1C7EE88100772EAE /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		94F965BA1C7F821700772EAE /* signinwithfacebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signinwithfacebook.png; sourceTree = "<group>"; };
 		94F965BC1C7F85AC00772EAE /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -59,14 +59,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				81BA817F1A49E0F000E65899 /* libstdc++.6.dylib in Frameworks */,
-				94D1C2D91C82829400C27067 /* FBSDKCoreKit.framework in Frameworks */,
 				81BA817B1A49E0E500E65899 /* SystemConfiguration.framework in Frameworks */,
 				94F9657F1C7EE88100772EAE /* ParseFacebookUtilsV4.framework in Frameworks */,
 				81BA81791A49E0DB00E65899 /* AudioToolbox.framework in Frameworks */,
 				81BA81771A49E0D500E65899 /* libsqlite3.dylib in Frameworks */,
+				1DA411B81C8918EF004B110B /* FBSDKCoreKit.framework in Frameworks */,
 				81BA81711A49DB6800E65899 /* Parse.framework in Frameworks */,
-				94D1C2DA1C82829400C27067 /* FBSDKLoginKit.framework in Frameworks */,
 				81BA81721A49DB6800E65899 /* ParseCrashReporting.framework in Frameworks */,
+				1DA411BA1C8918F8004B110B /* FBSDKLoginKit.framework in Frameworks */,
 				81BA81811A49E10C00E65899 /* ParseUI.framework in Frameworks */,
 				81BA81701A49DB6800E65899 /* Bolts.framework in Frameworks */,
 			);
@@ -120,8 +120,8 @@
 		81BA816A1A49DB5600E65899 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				94D1C2D71C82829400C27067 /* FBSDKCoreKit.framework */,
-				94D1C2D81C82829400C27067 /* FBSDKLoginKit.framework */,
+				1DA411B91C8918F8004B110B /* FBSDKLoginKit.framework */,
+				1DA411B71C8918EF004B110B /* FBSDKCoreKit.framework */,
 				94F9657E1C7EE88100772EAE /* ParseFacebookUtilsV4.framework */,
 				81BA816B1A49DB6800E65899 /* Bolts.framework */,
 				81BA816C1A49DB6800E65899 /* Parse.framework */,

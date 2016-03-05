@@ -17,6 +17,10 @@ class SwipeViewController: UIViewController {
     var displayUserId = ""
     
     
+    @IBAction func onClickSetting(sender: AnyObject) {
+        self.performSegueWithIdentifier("showMainSettings", sender: self)
+    }
+    
     func wasDragged(gesture: UIPanGestureRecognizer) {
         
         let translation = gesture.translationInView(self.view)

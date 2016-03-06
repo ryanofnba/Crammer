@@ -10,4 +10,7 @@ import UIKit
 
 class profileSettings: UITableViewController {
     
+    @IBAction func showMainSettings(sender: AnyObject) {
+        self.performSegueWithIdentifier("showMainSettings", sender: self)
+    }
 }

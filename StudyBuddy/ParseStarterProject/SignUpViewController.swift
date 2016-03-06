@@ -13,11 +13,19 @@ class SignUpViewController: UIViewController {
 
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var interestedInGirl: UISwitch!
+    @IBOutlet weak var displayName: UITextField!
+    @IBOutlet weak var ageTextField: UITextField!
+    @IBOutlet weak var yearTextField: UITextField!
+    @IBOutlet weak var majorTextField: UITextField!
     
     
     @IBAction func signUp(sender: AnyObject) {
         
         PFUser.currentUser()?["interestedInGirl"] = interestedInGirl.on
+        PFUser.currentUser()?["displayName"] = self.displayName.text
+        PFUser.currentUser()?["age"] = self.ageTextField.text
+        PFUser.currentUser()?["year"] = self.yearTextField.text
+        PFUser.currentUser()?["major"] = self.majorTextField.text
         PFUser.currentUser()?.save()
         self.performSegueWithIdentifier("showSwipeScreen", sender: self)
         

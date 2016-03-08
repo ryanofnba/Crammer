@@ -16,6 +16,9 @@ class SwipeViewController: UIViewController {
     
     var displayUserId = ""
     
+    @IBAction func onClickMessages(sender: AnyObject) {
+         self.performSegueWithIdentifier("showMessages", sender: self)
+    }
     
     @IBAction func onClickSetting(sender: AnyObject) {
         self.performSegueWithIdentifier("showMainSettings", sender: self)

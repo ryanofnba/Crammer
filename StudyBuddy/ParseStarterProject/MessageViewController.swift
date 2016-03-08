@@ -10,6 +10,10 @@ import UIKit
 
 class MessageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    
+    @IBAction func showSwipeScreen(sender: AnyObject) {
+        self.performSegueWithIdentifier("showSwipeScreen", sender: self)
+    }
 
     @IBOutlet weak var messageTableView: UITableView!
     var messageArray:[String] = [String]()

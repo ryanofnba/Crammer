@@ -58,7 +58,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // 1
-        self.view.backgroundColor = UIColor.blueColor()
+        //self.view.backgroundColor = UIColor.blueColor()
         
         // 2
         gradientLayer.frame = self.view.bounds
@@ -68,7 +68,7 @@ class ViewController: UIViewController {
         //let color2 = UIColor(red: 1.0, green: 0, blue: 0, alpha: 1.0).CGColor as CGColorRef
         //let color3 = UIColor.clearColor().CGColor as CGColorRef
         let color4 = UIColor(white: 0.0, alpha: 0.0).CGColor as CGColorRef
-        gradientLayer.colors = [color1, color4]
+        gradientLayer.colors = [color4, color1]
         
         // 4
         gradientLayer.locations = [0.25, 0.75]

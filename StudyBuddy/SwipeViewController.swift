@@ -181,7 +181,6 @@ class SwipeViewController: UIViewController {
             (geoPoint: PFGeoPoint?, error: NSError?) -> Void in
             
             if let geoPoint = geoPoint {
-                
                 PFUser.currentUser()?["location"] = geoPoint
                 PFUser.currentUser()?.save()
             }

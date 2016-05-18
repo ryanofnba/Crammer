@@ -71,11 +71,11 @@ class ViewController: UIViewController {
         gradientLayer.colors = [color1, color4]
         
         // 4
-        gradientLayer.locations = [0.0, 0.75]
+        gradientLayer.locations = [0.25, 0.75]
         
         // 5
-        self.view.layer.addSublayer(gradientLayer)
-        
+        //self.view.layer.addSublayer(gradientLayer)
+        view.layer.insertSublayer(gradientLayer, atIndex: 0)
         // Do any additional setup after loading the view, typically from a nib.
         
         

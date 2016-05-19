@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10112" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10083"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -379,7 +378,7 @@
                                     <action selector="signInFB:" destination="BYZ-38-t0r" eventType="touchUpInside" id="odd-Rm-RQX"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Study Buddy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpV-VP-dIZ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   Crammer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpV-VP-dIZ">
                                 <rect key="frame" x="60" y="104" width="201" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="201" id="gh7-kh-tPU"/>
@@ -538,21 +537,14 @@
                                 </constraints>
                                 <items>
                                     <navigationItem title="Crammer" id="TPg-tU-v8H">
-                                        <leftBarButtonItems>
-                                            <barButtonItem title="Log Out" id="QHn-6j-ECv">
-                                                <connections>
-                                                    <segue destination="BYZ-38-t0r" kind="modal" identifier="logOut" id="XIo-WU-M7s"/>
-                                                </connections>
-                                            </barButtonItem>
-                                            <barButtonItem title="Message" id="8cI-QF-x8L">
-                                                <connections>
-                                                    <action selector="onClickMessages:" destination="oPv-9n-G46" id="cK6-jj-Fwo"/>
-                                                </connections>
-                                            </barButtonItem>
-                                        </leftBarButtonItems>
-                                        <barButtonItem key="rightBarButtonItem" title="Setting" id="aNB-cZ-PdI">
+                                        <barButtonItem key="leftBarButtonItem" image="154_Settings" style="plain" id="aNB-cZ-PdI">
                                             <connections>
                                                 <action selector="onClickSetting:" destination="oPv-9n-G46" id="Thl-uD-awM"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" image="085_Comment-1" id="8cI-QF-x8L">
+                                            <connections>
+                                                <action selector="onClickMessages:" destination="oPv-9n-G46" id="cK6-jj-Fwo"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -580,7 +572,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OOM-oe-J1O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1808" y="-72.893333333333331"/>
+            <point key="canvasLocation" x="1802" y="-76"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="5YS-3q-31k">
@@ -786,6 +778,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="085_Comment-1" width="22" height="21"/>
+        <image name="154_Settings" width="20" height="20"/>
         <image name="signinwithfacebook.png" width="300" height="46"/>
     </resources>
     <inferredMetricsTieBreakers>

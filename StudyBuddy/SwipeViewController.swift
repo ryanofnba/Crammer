@@ -20,9 +20,13 @@ class SwipeViewController: UIViewController {
          self.performSegueWithIdentifier("showMessages", sender: self)
     }
     
-    @IBAction func onClickSetting(sender: AnyObject) {
+    @IBAction func onClickSettings(sender: AnyObject) {
         self.performSegueWithIdentifier("showMainSettings", sender: self)
     }
+    /**@IBAction func onClickSetting(sender: AnyObject) {
+        self.performSegueWithIdentifier("showMainSettings", sender: self)
+    }*/
+    
     
     func wasDragged(gesture: UIPanGestureRecognizer) {
         

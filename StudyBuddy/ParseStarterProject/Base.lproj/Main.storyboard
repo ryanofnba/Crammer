@@ -539,7 +539,7 @@
                                     <navigationItem title="Crammer" id="TPg-tU-v8H">
                                         <barButtonItem key="leftBarButtonItem" image="154_Settings" style="plain" id="aNB-cZ-PdI">
                                             <connections>
-                                                <action selector="onClickSetting:" destination="oPv-9n-G46" id="Thl-uD-awM"/>
+                                                <action selector="onClickSettings:" destination="oPv-9n-G46" id="ixL-n7-WUN"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" image="085_Comment-1" id="8cI-QF-x8L">
@@ -566,8 +566,8 @@
                     <connections>
                         <outlet property="infoLabel" destination="u31-4G-rIM" id="Brr-Xs-lZl"/>
                         <outlet property="userImage" destination="8xl-g7-8P0" id="jOP-wA-P4B"/>
-                        <segue destination="RrM-5t-POh" kind="modal" identifier="showMainSettings" id="PYR-N6-I6h"/>
                         <segue destination="wLi-Dc-uUm" kind="modal" identifier="showMessages" id="OWF-eZ-EWA"/>
+                        <segue destination="RrM-5t-POh" kind="modal" identifier="showMainSettings" id="alk-sh-WAE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OOM-oe-J1O" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -783,7 +783,7 @@
         <image name="signinwithfacebook.png" width="300" height="46"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PYR-N6-I6h"/>
+        <segue reference="alk-sh-WAE"/>
         <segue reference="7b3-jP-vST"/>
     </inferredMetricsTieBreakers>
 </document>

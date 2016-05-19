@@ -23,6 +23,8 @@ class MainSettings: UITableViewController {
 
     
     @IBAction func showAccountSettings(sender: AnyObject) {
+        self.performSegueWithIdentifier("showMainSettings", sender: self)
+        
     }
     
     override func viewDidLoad() {

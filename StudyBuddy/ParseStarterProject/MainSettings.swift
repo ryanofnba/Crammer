@@ -11,15 +11,16 @@ import Parse
 
 class MainSettings: UITableViewController {
 
-
     @IBAction func showSwipeScreen(sender: AnyObject) {
-          self.performSegueWithIdentifier("showSwipeScreen", sender: self)
+
+    self.performSegueWithIdentifier("showSwipeScreen", sender: self)
     }
-    
+
+
     @IBAction func showProfileSettings(sender: AnyObject) {
         self.performSegueWithIdentifier("showProfileSettings", sender: self)
     }
-   
+
     
     @IBAction func showAccountSettings(sender: AnyObject) {
     }

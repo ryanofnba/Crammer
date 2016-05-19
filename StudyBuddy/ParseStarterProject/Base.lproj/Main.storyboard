@@ -247,7 +247,11 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
                                 <navigationItem title="Settings" id="Q44-Uj-HRR">
-                                    <barButtonItem key="leftBarButtonItem" title="Match me" id="RwB-Oh-cjd"/>
+                                    <barButtonItem key="leftBarButtonItem" title="Match me" id="RwB-Oh-cjd">
+                                        <connections>
+                                            <action selector="showSwipeScreen:" destination="RrM-5t-POh" id="Uod-q6-mCV"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </navigationItem>
                             </items>
                         </navigationBar>
@@ -343,8 +347,9 @@
                     <navigationItem key="navigationItem" id="6C2-Pf-TPI"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="showMatchScreen" destination="RwB-Oh-cjd" id="jTq-01-a3i"/>
                         <segue destination="bpw-kC-zOv" kind="modal" identifier="showProfileSettings" id="6c0-r6-TgZ"/>
-                        <segue destination="oPv-9n-G46" kind="modal" identifier="showSwipeScreen" id="xm7-ye-wdk"/>
+                        <segue destination="oPv-9n-G46" kind="modal" id="7b3-jP-vST"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nUi-F5-Ceb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -784,7 +789,7 @@
         <image name="signinwithfacebook.png" width="300" height="46"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="AFq-Ec-nhU"/>
         <segue reference="PYR-N6-I6h"/>
+        <segue reference="7b3-jP-vST"/>
     </inferredMetricsTieBreakers>
 </document>

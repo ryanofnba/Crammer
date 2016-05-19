@@ -778,7 +778,7 @@
         <image name="signinwithfacebook.png" width="300" height="46"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LsK-eU-QQc"/>
+        <segue reference="rL2-Af-JNH"/>
         <segue reference="PYR-N6-I6h"/>
     </inferredMetricsTieBreakers>
 </document>

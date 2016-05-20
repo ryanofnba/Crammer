@@ -26,7 +26,7 @@ class SwipeViewController: UIViewController {
     /**@IBAction func onClickSetting(sender: AnyObject) {
         self.performSegueWithIdentifier("showMainSettings", sender: self)
     }*/
-    
+
     
     func wasDragged(gesture: UIPanGestureRecognizer) {
         

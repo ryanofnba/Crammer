@@ -203,6 +203,10 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="U33-Yu-hmb"/>
                     <connections>
+                        <outlet property="ageField" destination="LN1-Mc-DLT" id="MKj-VN-OPN"/>
+                        <outlet property="majorField" destination="LlA-kZ-hko" id="fZF-Mx-Uby"/>
+                        <outlet property="nameField" destination="weZ-Ep-3bF" id="K3d-zK-PJh"/>
+                        <outlet property="yearField" destination="nu8-xF-SOq" id="XFB-0I-3gA"/>
                         <segue destination="RrM-5t-POh" kind="modal" identifier="showMainSettings" id="hQd-Rt-ZIc"/>
                     </connections>
                 </tableViewController>
@@ -957,7 +961,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="7b3-jP-vST"/>
-        <segue reference="WIQ-Qk-ykN"/>
+        <segue reference="hQd-Rt-ZIc"/>
         <segue reference="OWF-eZ-EWA"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -153,8 +153,19 @@ class profileSettings: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var currentUser = PFUser.currentUser()
-        nameField.text = currentUser!["displayName"] as! String
+        
+        let currentUser = PFUser.currentUser()
+        
+        print(currentUser?["displayName"])
+        
+        if let nameText = currentUser!["displayName"] as? String {
+            nameField.text = nameText
+        }
+        
+        if let majorText = currentUser!["major"] as? String {
+            majorField.text = majorText
+        }
+        
         majorField.text = currentUser!["major"] as! String
         ageField.text = currentUser!["age"] as! String
         yearField.text = currentUser!["year"] as! String

@@ -7,8 +7,16 @@
 //
 
 import UIKit
+import Parse
 
 class profileSettings: UITableViewController {
+    let gradientLayer = CAGradientLayer()
+    
+    @IBOutlet weak var nameField: UILabel!
+    @IBOutlet weak var majorField: UILabel!
+    @IBOutlet weak var ageField: UILabel!
+    @IBOutlet weak var yearField: UILabel!
+    
     
     @IBAction func editName(sender: AnyObject) {
         
@@ -140,5 +148,30 @@ class profileSettings: UITableViewController {
     
     @IBAction func showMainSettings(sender: AnyObject) {
         self.performSegueWithIdentifier("showMainSettings", sender: self)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+        let currentUser = PFUser.currentUser()
+        
+        print(currentUser?["displayName"])
+        
+        if let nameText = currentUser!["displayName"] as? String {
+            nameField.text = nameText
+        }
+        
+        if let majorText = currentUser!["major"] as? String {
+            majorField.text = majorText
+        }
+        
+        majorField.text = currentUser!["major"] as! String
+        ageField.text = currentUser!["age"] as! String
+        yearField.text = currentUser!["year"] as! String
+        
+        
+        
+        
     }
 }

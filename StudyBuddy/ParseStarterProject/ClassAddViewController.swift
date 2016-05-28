@@ -8,8 +8,11 @@
 
 import UIKit
 
-class ClassAddViewController: UIViewController {
+class ClassAddViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet var txtTask: UITextField!
+    @IBOutlet var txtDesc: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +25,24 @@ class ClassAddViewController: UIViewController {
     }
     
 
+    @IBAction func btnAddTask(sender : UIButton){
+        if (txtTask.text == ""){
+            //Task Title is blank, do not add a record
+        } else {
+            //add record
+            classMgr.addTask(txtTask.text!, desc: txtDesc.text!)
+            
+            //dismiss keyboard and reset fields
+            
+            self.view.endEditing(true)
+            txtTask.text = nil
+            txtDesc.text = nil
+            
+        }
+    }
+    
+
+    
     /*
     // MARK: - Navigation
 

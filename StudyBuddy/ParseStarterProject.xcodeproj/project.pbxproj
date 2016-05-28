@@ -32,6 +32,7 @@
 		94F965BB1C7F821700772EAE /* signinwithfacebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 94F965BA1C7F821700772EAE /* signinwithfacebook.png */; };
 		94F965BD1C7F85AC00772EAE /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F965BC1C7F85AC00772EAE /* SignUpViewController.swift */; };
 		94F965C11C7F96CA00772EAE /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F965C01C7F96CA00772EAE /* SwipeViewController.swift */; };
+		D98BF3C51CF96FB300A7828A /* ClassManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BF3C41CF96FB200A7828A /* ClassManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		94F965BA1C7F821700772EAE /* signinwithfacebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signinwithfacebook.png; sourceTree = "<group>"; };
 		94F965BC1C7F85AC00772EAE /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		94F965C01C7F96CA00772EAE /* SwipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwipeViewController.swift; path = ../SwipeViewController.swift; sourceTree = "<group>"; };
+		D98BF3C41CF96FB200A7828A /* ClassManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,13 +114,14 @@
 				1DA411C11C8D5BAF004B110B /* MessageViewController.swift */,
 				94F965C01C7F96CA00772EAE /* SwipeViewController.swift */,
 				81BA814A1A49DA1800E65899 /* AppDelegate.swift */,
+				81BA814C1A49DA1800E65899 /* ViewController.swift */,
+				94F965BC1C7F85AC00772EAE /* SignUpViewController.swift */,
+				1DA411BB1C89244D004B110B /* MainSettings.swift */,
+				81BA814E1A49DA1800E65899 /* Main.storyboard */,
 				29D2C9171CEF031C0049AEA2 /* ClassAdderTableViewController.swift */,
 				29D2C9191CEF037B0049AEA2 /* ClassAddViewController.swift */,
-				81BA814C1A49DA1800E65899 /* ViewController.swift */,
 				29D2C91B1CEF04140049AEA2 /* ReviewClassAddViewController.swift */,
-				94F965BC1C7F85AC00772EAE /* SignUpViewController.swift */,
-				81BA814E1A49DA1800E65899 /* Main.storyboard */,
-				1DA411BB1C89244D004B110B /* MainSettings.swift */,
+				D98BF3C41CF96FB200A7828A /* ClassManager.swift */,
 				94F965BA1C7F821700772EAE /* signinwithfacebook.png */,
 				81BA81511A49DA1800E65899 /* Images.xcassets */,
 				81BA81481A49DA1800E65899 /* Supporting Files */,
@@ -257,6 +260,7 @@
 				29D2C9181CEF031C0049AEA2 /* ClassAdderTableViewController.swift in Sources */,
 				29D2C91A1CEF037B0049AEA2 /* ClassAddViewController.swift in Sources */,
 				1DA411BC1C89244D004B110B /* MainSettings.swift in Sources */,
+				D98BF3C51CF96FB300A7828A /* ClassManager.swift in Sources */,
 				81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */,
 				94F965C11C7F96CA00772EAE /* SwipeViewController.swift in Sources */,
 				1DA411C21C8D5BAF004B110B /* MessageViewController.swift in Sources */,

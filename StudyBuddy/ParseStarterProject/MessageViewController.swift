@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import Parse
 
-class MessageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MessageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
+    @IBOutlet weak var MessageTextField: UITextField!
+    
+    @IBOutlet weak var DocViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var SendButton: UIButton!
     
     @IBAction func showSwipeScreen(sender: AnyObject) {
         self.performSegueWithIdentifier("showSwipeScreen", sender: self)
@@ -25,13 +30,79 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         self.messageTableView.delegate = self
         self.messageTableView.dataSource = self
+        //set self as delegate as text field
+        self.MessageTextField.delegate = self
         
+        //add a tap gesture to tableview
+        let tapGesture:UITapGestureRecognizer = UITapGestureRecognizer(target:self, action: "tableViewTapped")
+        self.messageTableView.addGestureRecognizer(tapGesture)
         //Add some sample data so we can see something
         self.messageArray.append("Test 1")
         self.messageArray.append("Test 2")
         self.messageArray.append("Test 3")
         
     }
+    @IBAction func SendButtonTapped(sender: UIButton) {
+        //send button is tapped
+        
+        //call end editing method
+        self.MessageTextField.endEditing(true)
+        
+        //create PFObject
+        var newMessageObject = PFObject(className:"Messages")
+        
+        //set text to the text of the message field and save PFObject
+        newMessageObject.setObject(self.MessageTextField.text!, forKey: "Text")
+        newMessageObject.saveInBackgroundWithBlock(
+            {
+                (succeeded:Bool, error:NSError?) -> Void in
+                if succeeded {
+                    NSLog("Object created with id: (newMessageObject.objectId)")
+                } else {
+                    NSLog(error!.description)
+                }
+                self.SendButton.enabled = true
+                self.MessageTextField.enabled = true
+                self.MessageTextField.text = ""
+            }
+        )
+        /**newMessageObject.saveInBackgroundWithBlock {
+            (success:Bool, error:NSError!) -> Void in
+            if (success == true) {
+                // show latest messages and reload table
+            }
+            else {
+                
+            }
+        }*/
+    }
+    
+    func tableViewTapped() {
+        //force text field to end editing
+        self.MessageTextField.endEditing(true)
+    }
+    //MARK textField delegate methods
+    func textFieldDidBeginEditing(textField: UITextField) {
+
+        self.view.layoutIfNeeded()
+        UIView.animateWithDuration(0.5, animations: {
+            self.DocViewHeightConstraint.constant = 350
+            self.view.layoutIfNeeded()
+            
+            }, completion: nil)
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        self.view.layoutIfNeeded()
+        UIView.animateWithDuration(0.5, animations: {
+            self.DocViewHeightConstraint.constant = 60
+            self.view.layoutIfNeeded()
+            
+            }, completion: nil)
+    }
+    
+    //MARK tableview delegate methods
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

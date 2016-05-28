@@ -421,7 +421,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ex7-rC-VUM" userLabel="Doc View">
                                 <rect key="frame" x="-4" y="508" width="328" height="60"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="svsdvsvsvs" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G05-fW-1ww">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G05-fW-1ww">
                                         <rect key="frame" x="8" y="15" width="250" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="250" id="Pji-uL-SNa"/>
@@ -435,14 +435,15 @@
                                             <constraint firstAttribute="width" constant="40" id="ODh-eH-cCp"/>
                                         </constraints>
                                         <state key="normal" title="Send"/>
+                                        <connections>
+                                            <action selector="SendButtonTapped:" destination="wLi-Dc-uUm" eventType="touchUpInside" id="Xgq-NO-IVF"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="FCg-lC-mAW"/>
                                     <constraint firstItem="hBv-9g-SOn" firstAttribute="top" secondItem="ex7-rC-VUM" secondAttribute="top" constant="15" id="HxR-sO-8na"/>
-                                    <constraint firstAttribute="bottom" secondItem="hBv-9g-SOn" secondAttribute="bottom" constant="15" id="Tpw-s7-TtD"/>
-                                    <constraint firstAttribute="bottom" secondItem="G05-fW-1ww" secondAttribute="bottom" constant="15" id="UpA-gD-xnd"/>
                                     <constraint firstItem="hBv-9g-SOn" firstAttribute="leading" secondItem="G05-fW-1ww" secondAttribute="trailing" constant="14" id="W7e-XA-E4W"/>
                                     <constraint firstItem="G05-fW-1ww" firstAttribute="top" secondItem="ex7-rC-VUM" secondAttribute="top" constant="15" id="ayf-qf-ooM"/>
                                     <constraint firstItem="G05-fW-1ww" firstAttribute="leading" secondItem="ex7-rC-VUM" secondAttribute="leading" constant="8" id="cRY-M3-vcY"/>
@@ -493,6 +494,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="DocViewHeightConstraint" destination="FCg-lC-mAW" id="PPL-HW-o5Y"/>
+                        <outlet property="MessageTextField" destination="G05-fW-1ww" id="Q6G-ex-KEB"/>
+                        <outlet property="SendButton" destination="hBv-9g-SOn" id="n0d-0z-J9H"/>
                         <outlet property="messageTableView" destination="Ivn-Ex-XMx" id="dj5-pP-NDJ"/>
                         <segue destination="oPv-9n-G46" kind="modal" identifier="showSwipeScreen" id="AFq-Ec-nhU"/>
                     </connections>
@@ -784,6 +788,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="alk-sh-WAE"/>
-        <segue reference="7b3-jP-vST"/>
+        <segue reference="AFq-Ec-nhU"/>
     </inferredMetricsTieBreakers>
 </document>

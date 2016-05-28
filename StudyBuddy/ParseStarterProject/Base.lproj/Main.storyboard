@@ -964,7 +964,8 @@
         <image name="signinwithfacebook.png" width="300" height="46"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="alk-sh-WAE"/>
-        <segue reference="AFq-Ec-nhU"/>
+        <segue reference="7b3-jP-vST"/>
+        <segue reference="hQd-Rt-ZIc"/>
+        <segue reference="OWF-eZ-EWA"/>
     </inferredMetricsTieBreakers>
 </document>

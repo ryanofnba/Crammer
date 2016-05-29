@@ -173,6 +173,10 @@ class SwipeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let logo = UIImage(named: "NavBarCrammer.jpg")
+        let imageView = UIImageView(image:logo)
+        self.navigationItem.titleView = imageView
+        
         //swiping
         let gesture = UIPanGestureRecognizer(target: self, action: Selector("wasDragged:"))
         userImage.addGestureRecognizer(gesture)

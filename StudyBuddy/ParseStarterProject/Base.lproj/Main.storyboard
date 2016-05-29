@@ -361,23 +361,14 @@
                                     <action selector="signInFB:" destination="BYZ-38-t0r" eventType="touchUpInside" id="odd-Rm-RQX"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   Crammer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpV-VP-dIZ">
-                                <rect key="frame" x="60" y="104" width="201" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="201" id="gh7-kh-tPU"/>
-                                    <constraint firstAttribute="height" constant="44" id="nLw-cF-Rua"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Crammer" translatesAutoresizingMaskIntoConstraints="NO" id="KQH-69-8yK">
+                                <rect key="frame" x="50" y="89" width="240" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="EL1-lz-n6n" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="OZV-Qn-yjO"/>
                             <constraint firstItem="EL1-lz-n6n" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZUx-Hp-MKB"/>
-                            <constraint firstItem="hpV-VP-dIZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="84" id="bJS-Ej-9F6"/>
-                            <constraint firstItem="hpV-VP-dIZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="umg-9q-E7J"/>
                         </constraints>
                     </view>
                     <connections>
@@ -485,7 +476,7 @@
             </objects>
             <point key="canvasLocation" x="2933" y="-59"/>
         </scene>
-        <!--Crammer-->
+        <!--Swipe View Controller-->
         <scene sceneID="kUC-hK-CYY">
             <objects>
                 <viewController id="oPv-9n-G46" customClass="SwipeViewController" customModule="ParseStarterProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -523,7 +514,7 @@
                             <constraint firstItem="u31-4G-rIM" firstAttribute="centerX" secondItem="PJy-r1-yfS" secondAttribute="centerX" id="ZQB-TA-MQx"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Crammer" id="TPg-tU-v8H">
+                    <navigationItem key="navigationItem" id="TPg-tU-v8H">
                         <barButtonItem key="leftBarButtonItem" image="154_Settings" style="plain" id="aNB-cZ-PdI">
                             <connections>
                                 <segue destination="RrM-5t-POh" kind="modal" identifier="onClickSettings" id="WIQ-Qk-ykN"/>
@@ -905,13 +896,14 @@
         <image name="037_Pen" width="21" height="21"/>
         <image name="085_Comment-1" width="22" height="21"/>
         <image name="154_Settings" width="20" height="20"/>
+        <image name="Crammer" width="970" height="307"/>
         <image name="signinwithfacebook.png" width="300" height="46"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="rL2-Af-JNH"/>
         <segue reference="ghQ-AE-Dr3"/>
+        <segue reference="WIQ-Qk-ykN"/>
         <segue reference="OWF-eZ-EWA"/>
-        <segue reference="hQd-Rt-ZIc"/>
         <segue reference="m7B-s3-c1K"/>
     </inferredMetricsTieBreakers>
 </document>

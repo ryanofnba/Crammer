@@ -21,6 +21,10 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let logo = UIImage(named: "NavBarCrammer.jpg")
+        let imageView = UIImageView(image:logo)
+        self.navigationItem.titleView = imageView
+        
         // Do any additional setup after loading the view.
         
         self.messageTableView.delegate = self

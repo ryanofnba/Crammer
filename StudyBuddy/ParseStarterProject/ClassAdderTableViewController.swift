@@ -7,10 +7,17 @@
 //
 
 import UIKit
+import Parse
 
 class ClassAdderTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var tblTasks : UITableView!
+    
+    @IBAction func SaveClassList(sender: AnyObject) {
+        PFUser.currentUser()?["classes"] = classMgr.getClasses()
+        //PFUser.currentUser()?["classes"] = []
+        PFUser.currentUser()?.save()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,8 +46,8 @@ class ClassAdderTableViewController: UIViewController, UITableViewDelegate, UITa
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Default Tasks")
         
-        cell.textLabel?.text = classMgr.tasks[indexPath.row].name
-        cell.detailTextLabel?.text = classMgr.tasks[indexPath.row].desc
+        cell.textLabel?.text = classMgr.tasks[indexPath.row].name + classMgr.tasks[indexPath.row].desc
+        //cell.detailTextLabel?.text = classMgr.tasks[indexPath.row].desc
         
         return cell
     }

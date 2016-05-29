@@ -22,7 +22,12 @@ class ClassManager: NSObject {
         tasks.append(task(name: name, desc: desc))
     }
     
-    func getClasses() -> [task] {
-        return tasks
+    func getClasses() -> [String] {
+        var classes: [String] = []
+        for i in 0 ..< tasks.count {
+           classes.append(tasks[i].name + tasks[i].desc)
+        }
+        //classes.append("CPE123")
+        return classes
     }
 }

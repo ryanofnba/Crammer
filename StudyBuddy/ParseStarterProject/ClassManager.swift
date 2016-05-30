@@ -48,7 +48,7 @@ class ClassManager: NSObject {
             //For each object in the class object, append it to myArray
             myArray.append(object)
             //print("adding")
-        }ß
+        }
         print(myArray.count)
         for i in 0 ..< myArray.count {
             print(myArray[i])

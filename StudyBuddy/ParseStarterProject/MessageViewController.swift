@@ -21,6 +21,10 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let logo = UIImage(named: "NavBarCrammer.jpg")
+        let imageView = UIImageView(image:logo)
+        self.navigationItem.titleView = imageView
+        
         // Do any additional setup after loading the view.
         
         self.messageTableView.delegate = self
@@ -30,6 +34,10 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.messageArray.append("Test 1")
         self.messageArray.append("Test 2")
         self.messageArray.append("Test 3")
+        
+        navigationController!.navigationBar.barTintColor = UIColor(red: 77/255, green: 161/255, blue: 169/255, alpha: 1.0)
+        //navigationController?.navigationBar.barTintColor = UIColor.blueColor()
+        self.view.backgroundColor = UIColor(red: 242/255, green: 236/255, blue: 179/255, alpha: 1.0)
         
     }
 

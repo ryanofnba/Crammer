@@ -743,6 +743,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KP8-I6-60n" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="uU3-6k-UIo"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="W6e-5S-Ssd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -840,12 +841,12 @@
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="oRQ-3Y-eAG">
                             <connections>
                                 <action selector="SaveClassList:" destination="xuW-yS-pDs" id="rih-mE-BW1"/>
-                                <segue destination="oPv-9n-G46" kind="modal" id="3cP-WN-qMD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tblTasks" destination="Qda-9t-TRB" id="edB-ue-O2U"/>
+                        <segue destination="KP8-I6-60n" kind="modal" identifier="DoneAddingClasses" id="gkp-kr-re8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c6I-V2-83z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -900,10 +901,9 @@
         <image name="signinwithfacebook.png" width="300" height="46"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rL2-Af-JNH"/>
-        <segue reference="ghQ-AE-Dr3"/>
+        <segue reference="gkp-kr-re8"/>
+        <segue reference="m7B-s3-c1K"/>
         <segue reference="WIQ-Qk-ykN"/>
         <segue reference="OWF-eZ-EWA"/>
-        <segue reference="m7B-s3-c1K"/>
     </inferredMetricsTieBreakers>
 </document>

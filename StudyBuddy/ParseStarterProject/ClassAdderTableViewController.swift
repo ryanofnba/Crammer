@@ -16,7 +16,16 @@ class ClassAdderTableViewController: UIViewController, UITableViewDelegate, UITa
     @IBAction func SaveClassList(sender: AnyObject) {
         PFUser.currentUser()?["classes"] = classMgr.getClasses()
         //PFUser.currentUser()?["classes"] = []
-        PFUser.currentUser()?.save()
+        //PFUser.currentUser()?.saveInBackground()
+        PFUser.currentUser()?.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
+            if success {
+                print("Object Saved")
+                self.performSegueWithIdentifier("DoneAddingClasses", sender: self)
+            } else {
+                print("Error")
+            }
+            
+        })
     }
     
     override func viewDidLoad() {

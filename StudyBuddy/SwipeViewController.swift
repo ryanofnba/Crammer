@@ -190,7 +190,7 @@ class SwipeViewController: UIViewController {
             
             if let geoPoint = geoPoint {
                 PFUser.currentUser()?["location"] = geoPoint
-                PFUser.currentUser()?.save()
+                PFUser.currentUser()?.saveInBackground()
             }
         }
         

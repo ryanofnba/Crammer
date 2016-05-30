@@ -66,7 +66,7 @@ class SwipeViewController: UIViewController {
                 
                 PFUser.currentUser()?.addUniqueObjectsFromArray([displayUserId], forKey:acceptedOrRejected)
                 
-                PFUser.currentUser()?.save()
+                PFUser.currentUser()?.saveInBackground()
                 
             }
             

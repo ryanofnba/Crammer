@@ -240,7 +240,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wmF-iL-NlI">
-                                                    <rect key="frame" x="100" y="9" width="120" height="80"/>
+                                                    <rect key="frame" x="100" y="8" width="120" height="80"/>
                                                     <state key="normal" title="Profile"/>
                                                     <connections>
                                                         <action selector="showProfileSettings:" destination="RrM-5t-POh" eventType="touchUpInside" id="hwy-cE-gCS"/>
@@ -302,8 +302,7 @@
                                                     <rect key="frame" x="108" y="8" width="120" height="80"/>
                                                     <state key="normal" title="Log out"/>
                                                     <connections>
-                                                        <action selector="logOut:" destination="RrM-5t-POh" eventType="touchUpInside" id="1gw-x0-qY0"/>
-                                                        <action selector="logout:" destination="RrM-5t-POh" eventType="touchUpInside" id="2IZ-D4-WIQ"/>
+                                                        <action selector="loggedOut:" destination="RrM-5t-POh" eventType="touchUpInside" id="3Os-iF-Ho2"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -323,6 +322,7 @@
                     <connections>
                         <segue destination="bpw-kC-zOv" kind="modal" identifier="showProfileSettings" id="6c0-r6-TgZ"/>
                         <segue destination="KP8-I6-60n" kind="modal" identifier="showSwipeScreen" id="7b3-jP-vST"/>
+                        <segue destination="BYZ-38-t0r" kind="modal" identifier="loggedOut" id="6in-72-6k9"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nUi-F5-Ceb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -369,7 +369,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="-465"/>
+            <point key="canvasLocation" x="226" y="-458"/>
         </scene>
         <!--Message View Controller-->
         <scene sceneID="R5f-Eh-gLt">
@@ -892,9 +892,9 @@
         <image name="signinwithfacebook.png" width="300" height="46"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7b3-jP-vST"/>
         <segue reference="WIQ-Qk-ykN"/>
-        <segue reference="ncF-S8-hhJ"/>
+        <segue reference="7b3-jP-vST"/>
         <segue reference="HUZ-Tq-hey"/>
+        <segue reference="ncF-S8-hhJ"/>
     </inferredMetricsTieBreakers>
 </document>

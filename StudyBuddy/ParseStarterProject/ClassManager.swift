@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 var classMgr: ClassManager = ClassManager()
 
@@ -17,6 +18,47 @@ struct task {
 
 class ClassManager: NSObject {
     var tasks = [task]()
+    
+    override init() {
+        print("HI")
+        //Create an empty array
+        var myArray: [String] = [String]()
+        
+        //Get the data from the PFQuery class
+       /* let query = PFUser.query()
+        query!.findObjectsInBackgroundWithBlock{
+            (objects: [AnyObject]?, error: NSError?) -> Void in
+            if error == nil {
+                //if let objects = objects as? [PFObject] {
+                    for object in objects! {
+                        
+                        //For each object in the class object, append it to myArray
+                        myArray.append(object["name"])
+                        print("adding")
+                    }
+                    
+                //}
+            } else {
+                print("\(error?.userInfo)")
+            }
+        }*/
+        var classes = PFUser.currentUser()?.objectForKey("classes") as! [String]
+        for object in classes {
+            
+            //For each object in the class object, append it to myArray
+            myArray.append(object)
+            //print("adding")
+        }ß
+        print(myArray.count)
+        for i in 0 ..< myArray.count {
+            print(myArray[i])
+            let index = myArray[i].startIndex.advancedBy(3)
+            let subject = myArray[i].substringToIndex(index)
+            let classNum = myArray[i].substringFromIndex(index)
+            tasks.append(task(name: subject, desc: classNum))
+        }
+        
+    }
     
     func addTask(name: String, desc: String) {
         tasks.append(task(name: name, desc: desc))

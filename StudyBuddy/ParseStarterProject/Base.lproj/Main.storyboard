@@ -465,7 +465,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UYp-1F-tbr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3017" y="649"/>
+            <point key="canvasLocation" x="3037" y="375"/>
         </scene>
         <!--Swipe View Controller-->
         <scene sceneID="kUC-hK-CYY">
@@ -525,7 +525,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OOM-oe-J1O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2368" y="663"/>
+            <point key="canvasLocation" x="2360" y="375"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="5YS-3q-31k">
@@ -892,9 +892,9 @@
         <image name="signinwithfacebook.png" width="300" height="46"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7b3-jP-vST"/>
-        <segue reference="hQd-Rt-ZIc"/>
-        <segue reference="ncF-S8-hhJ"/>
+        <segue reference="AFq-Ec-nhU"/>
         <segue reference="HUZ-Tq-hey"/>
+        <segue reference="WIQ-Qk-ykN"/>
+        <segue reference="ncF-S8-hhJ"/>
     </inferredMetricsTieBreakers>
 </document>

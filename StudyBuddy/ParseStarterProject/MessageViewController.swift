@@ -35,6 +35,10 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.messageArray.append("Test 2")
         self.messageArray.append("Test 3")
         
+        navigationController!.navigationBar.barTintColor = UIColor(red: 77/255, green: 161/255, blue: 169/255, alpha: 1.0)
+        //navigationController?.navigationBar.barTintColor = UIColor.blueColor()
+        self.view.backgroundColor = UIColor(red: 242/255, green: 236/255, blue: 179/255, alpha: 1.0)
+        
     }
 
     override func didReceiveMemoryWarning() {

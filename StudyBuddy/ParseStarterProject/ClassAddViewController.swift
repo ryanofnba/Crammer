@@ -15,6 +15,9 @@ class ClassAddViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //navigationController?.navigationBar.barTintColor = UIColor.blueColor()
+        self.view.backgroundColor = UIColor(red: 242/255, green: 236/255, blue: 179/255, alpha: 1.0)
 
         // Do any additional setup after loading the view.
     }
@@ -41,6 +44,10 @@ class ClassAddViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool{
+        textField.resignFirstResponder()
+        return true
+    }
 
     
     /*

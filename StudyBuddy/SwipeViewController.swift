@@ -177,6 +177,10 @@ class SwipeViewController: UIViewController {
         let imageView = UIImageView(image:logo)
         self.navigationItem.titleView = imageView
         
+        navigationController!.navigationBar.barTintColor = UIColor(red: 77/255, green: 161/255, blue: 169/255, alpha: 1.0)
+        //navigationController?.navigationBar.barTintColor = UIColor.blueColor()
+        self.view.backgroundColor = UIColor(red: 242/255, green: 236/255, blue: 179/255, alpha: 1.0)
+        
         //swiping
         let gesture = UIPanGestureRecognizer(target: self, action: Selector("wasDragged:"))
         userImage.addGestureRecognizer(gesture)

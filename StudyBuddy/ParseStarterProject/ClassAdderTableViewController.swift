@@ -37,6 +37,10 @@ class ClassAdderTableViewController: UIViewController, UITableViewDelegate, UITa
         
         tblTasks.reloadData()
         
+        navigationController!.navigationBar.barTintColor = UIColor(red: 77/255, green: 161/255, blue: 169/255, alpha: 1.0)
+        //navigationController?.navigationBar.barTintColor = UIColor.blueColor()
+        self.view.backgroundColor = UIColor(red: 242/255, green: 236/255, blue: 179/255, alpha: 1.0)
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

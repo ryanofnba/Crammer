@@ -170,12 +170,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Courses Taken:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VxP-mH-MaM">
-                                                    <rect key="frame" x="0.0" y="13" width="118" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hv0-Kt-VRF">
                                                     <rect key="frame" x="105" y="9" width="90" height="32"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -183,10 +177,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Fy-x8-CV2">
-                                                    <rect key="frame" x="203" y="9" width="163" height="30"/>
-                                                    <state key="normal" title="&gt;"/>
+                                                    <rect key="frame" x="79" y="10" width="163" height="30"/>
+                                                    <state key="normal" title="Edit Classes"/>
                                                     <connections>
-                                                        <action selector="editCourses:" destination="bpw-kC-zOv" eventType="touchUpInside" id="fof-EY-cA0"/>
+                                                        <segue destination="x5u-Tx-Uhg" kind="modal" id="ncF-S8-hhJ"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -212,7 +206,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fhY-Nv-0BP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2592" y="-592"/>
+            <point key="canvasLocation" x="1344" y="-619"/>
         </scene>
         <!--Main Settings-->
         <scene sceneID="YQx-qs-Z0g">
@@ -265,9 +259,6 @@
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j35-KC-m0N">
                                                     <rect key="frame" x="108" y="9" width="120" height="80"/>
                                                     <state key="normal" title="Account Settings"/>
-                                                    <connections>
-                                                        <segue destination="x5u-Tx-Uhg" kind="modal" id="m7B-s3-c1K"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -336,7 +327,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nUi-F5-Ceb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1448" y="-583"/>
+            <point key="canvasLocation" x="676" y="-619"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -474,7 +465,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UYp-1F-tbr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2933" y="-59"/>
+            <point key="canvasLocation" x="3017" y="649"/>
         </scene>
         <!--Swipe View Controller-->
         <scene sceneID="kUC-hK-CYY">
@@ -755,7 +746,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HHB-K2-zKB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1583" y="286"/>
+            <point key="canvasLocation" x="1719" y="390"/>
         </scene>
         <!--Add Class-->
         <scene sceneID="d5a-aC-lTm">
@@ -870,7 +861,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j7E-bM-HVs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="611" y="363"/>
+            <point key="canvasLocation" x="611" y="335"/>
         </scene>
         <!--Classes-->
         <scene sceneID="dWg-Ys-Z3J">
@@ -901,9 +892,9 @@
         <image name="signinwithfacebook.png" width="300" height="46"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gkp-kr-re8"/>
-        <segue reference="m7B-s3-c1K"/>
-        <segue reference="WIQ-Qk-ykN"/>
-        <segue reference="OWF-eZ-EWA"/>
+        <segue reference="7b3-jP-vST"/>
+        <segue reference="hQd-Rt-ZIc"/>
+        <segue reference="ncF-S8-hhJ"/>
+        <segue reference="HUZ-Tq-hey"/>
     </inferredMetricsTieBreakers>
 </document>

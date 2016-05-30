@@ -27,9 +27,16 @@ class MainSettings: UITableViewController {
         
     }
     
+    @IBAction func loggedOut(sender: AnyObject) {
+        PFUser.logOut()
+        self.performSegueWithIdentifier("loggedOut", sender: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //navigationController?.navigationBar.barTintColor = UIColor.blueColor()
         self.view.backgroundColor = UIColor(red: 242/255, green: 236/255, blue: 179/255, alpha: 1.0)
     }
+    
+  
 }

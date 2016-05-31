@@ -13,6 +13,11 @@ class ContactsViewController: UITableViewController {
     
     var usernames = [String]()
     var images = [UIImage]()
+    
+    
+    @IBAction func backButton(sender: AnyObject) {
+        self.performSegueWithIdentifier("showSwipeScreen", sender: self)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

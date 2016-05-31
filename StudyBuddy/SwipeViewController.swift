@@ -14,6 +14,9 @@ class SwipeViewController: UIViewController {
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var infoLabel: UILabel!
     
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var majorLabel: UILabel!
+    
     var displayUserId = ""
     
     @IBAction func onClickMessages(sender: AnyObject) {
@@ -110,8 +113,11 @@ class SwipeViewController: UIViewController {
         
         //if let acceptedUsers =
         
-        query.whereKey("gender", equalTo: interestedIn)
-        query.whereKey("interestedInGirl", equalTo: isFemale)
+//        query.whereKey("gender", equalTo: interestedIn)
+//        query.whereKey("interestedInGirl", equalTo: isFemale)
+        query.whereKey("major", equalTo: "Computer Science")
+        //query.whereKey("classes", containsString: "CPE123")
+        //query.whereKey("objectId", containedIn: PFUser.currentUser()?["accepted"] as! [String])
         
         var ignoredUsers = [""]
         
@@ -128,8 +134,9 @@ class SwipeViewController: UIViewController {
         }
         
         query.whereKey("objectId", notContainedIn: ignoredUsers)
+    
         
-        
+        query.whereKey("objectId", notEqualTo: (PFUser.currentUser()?.objectId)!)
         
         query.limit = 1
         
@@ -158,6 +165,9 @@ class SwipeViewController: UIViewController {
                                 self.userImage.image = UIImage(data: data)
                                 
                             }
+                            else {
+                                self.userImage.image = UIImage(named: "bad-report-card")
+                            }
                             
                         }
                     }
@@ -185,8 +195,6 @@ class SwipeViewController: UIViewController {
         let gesture = UIPanGestureRecognizer(target: self, action: Selector("wasDragged:"))
         userImage.addGestureRecognizer(gesture)
         userImage.userInteractionEnabled = true
-        
-        
         
         PFGeoPoint.geoPointForCurrentLocationInBackground {
             

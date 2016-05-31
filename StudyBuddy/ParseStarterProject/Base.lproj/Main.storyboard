@@ -652,13 +652,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HQf-z6-ege">
-                                <rect key="frame" x="96" y="90" width="128" height="123"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="128" id="8ds-QN-8dm"/>
-                                    <constraint firstAttribute="height" constant="123" id="LTJ-aV-mTG"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Major" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="479-uC-ZCa">
                                 <rect key="frame" x="52" y="408" width="43" height="21"/>
                                 <constraints>
@@ -681,6 +674,13 @@
                                     <segue destination="x5u-Tx-Uhg" kind="modal" id="F3w-x2-tb3"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HQf-z6-ege">
+                                <rect key="frame" x="96" y="90" width="128" height="123"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="8ds-QN-8dm"/>
+                                    <constraint firstAttribute="height" constant="123" id="LTJ-aV-mTG"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -892,9 +892,9 @@
         <image name="signinwithfacebook.png" width="300" height="46"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WIQ-Qk-ykN"/>
-        <segue reference="7b3-jP-vST"/>
+        <segue reference="hQd-Rt-ZIc"/>
+        <segue reference="F3w-x2-tb3"/>
         <segue reference="HUZ-Tq-hey"/>
-        <segue reference="ncF-S8-hhJ"/>
+        <segue reference="AFq-Ec-nhU"/>
     </inferredMetricsTieBreakers>
 </document>

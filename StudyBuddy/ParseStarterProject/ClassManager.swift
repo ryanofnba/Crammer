@@ -42,11 +42,13 @@ class ClassManager: NSObject {
                 print("\(error?.userInfo)")
             }
         }*/
-        var classes = PFUser.currentUser()?.objectForKey("classes") as! [String]
+        var classes = []
+        if (PFUser.currentUser()?.objectForKey("classes") != nil) {
+        classes = PFUser.currentUser()?.objectForKey("classes") as! [String]
         for object in classes {
             
             //For each object in the class object, append it to myArray
-            myArray.append(object)
+            myArray.append(object as! String)
             //print("adding")
         }
         print(myArray.count)
@@ -57,7 +59,7 @@ class ClassManager: NSObject {
             let classNum = myArray[i].substringFromIndex(index)
             tasks.append(task(name: subject, desc: classNum))
         }
-        
+        }
     }
     
     func addTask(name: String, desc: String) {

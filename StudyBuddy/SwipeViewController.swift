@@ -18,6 +18,8 @@ class SwipeViewController: UIViewController {
     @IBOutlet weak var majorLabel: UILabel!
     
     var displayUserId = ""
+    var myClassList = [String]()
+    var matchClassList = [String]()
     
     @IBAction func onClickMessages(sender: AnyObject) {
          self.performSegueWithIdentifier("showMessages", sender: self)
@@ -98,24 +100,34 @@ class SwipeViewController: UIViewController {
         var interestedIn = "male"
         
         
-        if PFUser.currentUser()!["interestedInGirl"]! as! Bool == true {
-            
-            interestedIn = "female"
-            
-        }
-        
-        var isFemale = true
-        
-        if PFUser.currentUser()!["gender"]! as! String == "male" {
-            isFemale = false
-        }
+//        if PFUser.currentUser()!["interestedInGirl"]! as! Bool == true {
+//            
+//            interestedIn = "female"
+//            
+//        }
+//        
+//        var isFemale = true
+//        
+//        if PFUser.currentUser()!["gender"]! as! String == "male" {
+//            isFemale = false
+//        }
         
         
         //if let acceptedUsers =
         
 //        query.whereKey("gender", equalTo: interestedIn)
 //        query.whereKey("interestedInGirl", equalTo: isFemale)
-        query.whereKey("major", equalTo: "Computer Science")
+        //query.whereKey("major", equalTo: "Computer Science")
+        
+        
+//        if PFUser.currentUser()!["classes"]  != nil {
+//            myClassList = PFUser.currentUser()!["classes"] as! [String]
+//            print(myClassList)
+//        }
+        
+        
+        query.whereKey("classes", containedIn: myClassList)
+        
         //query.whereKey("classes", containsString: "CPE123")
         //query.whereKey("objectId", containedIn: PFUser.currentUser()?["accepted"] as! [String])
         
@@ -135,7 +147,7 @@ class SwipeViewController: UIViewController {
         
         query.whereKey("objectId", notContainedIn: ignoredUsers)
     
-        
+        //take out yourself when swiping
         query.whereKey("objectId", notEqualTo: (PFUser.currentUser()?.objectId)!)
         
         query.limit = 1
@@ -172,6 +184,15 @@ class SwipeViewController: UIViewController {
                         }
                     }
                     
+                    let usersName = object["name"] as! String
+                    let usersMajor = object["major"] as! String
+                    
+                    self.nameLabel.text = usersName
+                    self.majorLabel.text = usersMajor
+                    
+                    self.matchClassList = object["classes"] as! [String]
+                    print(self.matchClassList)
+                    
                 }
             }
             
@@ -186,6 +207,7 @@ class SwipeViewController: UIViewController {
         let logo = UIImage(named: "NavBarCrammer.jpg")
         let imageView = UIImageView(image:logo)
         self.navigationItem.titleView = imageView
+        
         
         navigationController!.navigationBar.barTintColor = UIColor(red: 77/255, green: 161/255, blue: 169/255, alpha: 1.0)
         //navigationController?.navigationBar.barTintColor = UIColor.blueColor()
@@ -205,6 +227,13 @@ class SwipeViewController: UIViewController {
                 PFUser.currentUser()?.saveInBackground()
             }
         }
+        
+        if (PFUser.currentUser()?.objectForKey("classes") != nil) {
+            print("Here Here Here")
+            myClassList = PFUser.currentUser()?.objectForKey("classes") as! [String]
+            print(myClassList)
+        }
+
         
         
         updateImage()

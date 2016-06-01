@@ -21,7 +21,7 @@ class SignUpViewController: UIViewController {
     
     @IBAction func signUp(sender: AnyObject) {
         
-        PFUser.currentUser()?["interestedInGirl"] = interestedInGirl.on
+       // PFUser.currentUser()?["interestedInGirl"] = interestedInGirl.on
         PFUser.currentUser()?["displayName"] = self.displayName.text
         PFUser.currentUser()?["age"] = self.ageTextField.text
         PFUser.currentUser()?["year"] = self.yearTextField.text

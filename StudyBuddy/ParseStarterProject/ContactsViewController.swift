@@ -13,11 +13,6 @@ class ContactsViewController: UITableViewController {
     
     var usernames = [String]()
     var images = [UIImage]()
-    
-    
-    @IBAction func backButton(sender: AnyObject) {
-        self.performSegueWithIdentifier("showSwipeScreen", sender: self)
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +25,7 @@ class ContactsViewController: UITableViewController {
             if let results = results {
                 
                 for result in results as! [PFUser] {
-                    self.usernames.append(result.username!)
+                    self.usernames.append(result["name"]! as! String)
                     
                     let imageFile = result["image"] as! PFFile
                     

@@ -24,7 +24,7 @@ class ViewController: UIViewController {
                 if let user = user {
                     //self.performSegueWithIdentifier("showSigninScreen", sender: self)
                     //print(user)
-                    if let interestedInGirls = user["interestedInGirl"] {
+                    if let accountCreated = user["name"] {
                         self.performSegueWithIdentifier("logUserIn", sender: self)
                     } else {
                         self.performSegueWithIdentifier("showSigninScreen", sender: self)
@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         
         if let username = PFUser.currentUser()?.username {
             
-            if let interestedInGirl = PFUser.currentUser()?["interestedInGirl"] {
+            if let user = PFUser.currentUser()?["name"] {
                 self.performSegueWithIdentifier("logUserIn", sender: self)
             } else {
                 self.performSegueWithIdentifier("showSigninScreen", sender: self)
@@ -61,7 +61,7 @@ class ViewController: UIViewController {
         //self.view.backgroundColor = UIColor.blueColor()
         
         // 2
-        gradientLayer.frame = self.view.bounds
+     /*   gradientLayer.frame = self.view.bounds
         
         // 3
         let color1 = UIColor.blueColor().CGColor as CGColorRef
@@ -75,7 +75,11 @@ class ViewController: UIViewController {
         
         // 5
         //self.view.layer.addSublayer(gradientLayer)
-        view.layer.insertSublayer(gradientLayer, atIndex: 0)
+        view.layer.insertSublayer(gradientLayer, atIndex: 0)*/
+        
+        
+        //navigationController?.navigationBar.barTintColor = UIColor.blueColor()
+        self.view.backgroundColor = UIColor(red: 242/255, green: 236/255, blue: 179/255, alpha: 1.0)
         // Do any additional setup after loading the view, typically from a nib.
         
         

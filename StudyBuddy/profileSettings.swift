@@ -170,7 +170,8 @@ class profileSettings: UITableViewController {
         ageField.text = currentUser!["age"] as! String
         yearField.text = currentUser!["year"] as! String
         
-        
+        //navigationController?.navigationBar.barTintColor = UIColor.blueColor()
+        self.view.backgroundColor = UIColor(red: 242/255, green: 236/255, blue: 179/255, alpha: 1.0)
         
         
     }

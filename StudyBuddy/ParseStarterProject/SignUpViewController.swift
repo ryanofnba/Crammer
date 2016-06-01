@@ -21,13 +21,13 @@ class SignUpViewController: UIViewController {
     
     @IBAction func signUp(sender: AnyObject) {
         
-        PFUser.currentUser()?["interestedInGirl"] = interestedInGirl.on
+       // PFUser.currentUser()?["interestedInGirl"] = interestedInGirl.on
         PFUser.currentUser()?["displayName"] = self.displayName.text
         PFUser.currentUser()?["age"] = self.ageTextField.text
         PFUser.currentUser()?["year"] = self.yearTextField.text
         PFUser.currentUser()?["major"] = self.majorTextField.text
-        PFUser.currentUser()?.save()
-        self.performSegueWithIdentifier("showSwipeScreen", sender: self)
+        PFUser.currentUser()?.saveInBackground()
+        
         
     }
     
@@ -119,7 +119,7 @@ class SignUpViewController: UIViewController {
                 PFUser.currentUser()?["gender"] = result["gender"]
                 PFUser.currentUser()?["name"] = result["name"]
                 
-                PFUser.currentUser()?.save()
+                PFUser.currentUser()?.saveInBackground()
                 
                 let userId = result["id"] as! String
                 let facebookProfilePictureURL = "https://graph.facebook.com/" + userId + "/picture?type=large"
@@ -133,7 +133,7 @@ class SignUpViewController: UIViewController {
                         let imageFile:PFFile = PFFile(data: data)
                         
                         PFUser.currentUser()?["image"] = imageFile
-                        PFUser.currentUser()?.save()
+                        PFUser.currentUser()?.saveInBackground()
                         
                     }
                     

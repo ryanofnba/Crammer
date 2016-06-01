@@ -14,7 +14,12 @@ class SwipeViewController: UIViewController {
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var infoLabel: UILabel!
     
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var majorLabel: UILabel!
+    
     var displayUserId = ""
+    var myClassList = [String]()
+    var matchClassList = [String]()
     
     @IBAction func onClickMessages(sender: AnyObject) {
          self.performSegueWithIdentifier("showMessages", sender: self)
@@ -66,7 +71,7 @@ class SwipeViewController: UIViewController {
                 
                 PFUser.currentUser()?.addUniqueObjectsFromArray([displayUserId], forKey:acceptedOrRejected)
                 
-                PFUser.currentUser()?.save()
+                PFUser.currentUser()?.saveInBackground()
                 
             }
             
@@ -99,17 +104,24 @@ class SwipeViewController: UIViewController {
             interestedIn = "female"
         }
         
-        var isFemale = true
-        
-        if PFUser.currentUser()!["gender"]! as! String == "male" {
-            isFemale = false
-        }
-        
         
         //if let acceptedUsers =
         
-        query.whereKey("gender", equalTo: interestedIn)
-        query.whereKey("interestedInGirl", equalTo: isFemale)
+//        query.whereKey("gender", equalTo: interestedIn)
+//        query.whereKey("interestedInGirl", equalTo: isFemale)
+        //query.whereKey("major", equalTo: "Computer Science")
+        
+        
+//        if PFUser.currentUser()!["classes"]  != nil {
+//            myClassList = PFUser.currentUser()!["classes"] as! [String]
+//            print(myClassList)
+//        }
+        
+        
+        query.whereKey("classes", containedIn: myClassList)
+        
+        //query.whereKey("classes", containsString: "CPE123")
+        //query.whereKey("objectId", containedIn: PFUser.currentUser()?["accepted"] as! [String])
         
         var ignoredUsers = [""]
         
@@ -126,8 +138,9 @@ class SwipeViewController: UIViewController {
         }
         
         query.whereKey("objectId", notContainedIn: ignoredUsers)
-        
-        
+    
+        //take out yourself when swiping
+        query.whereKey("objectId", notEqualTo: (PFUser.currentUser()?.objectId)!)
         
         query.limit = 1
         
@@ -156,9 +169,21 @@ class SwipeViewController: UIViewController {
                                 self.userImage.image = UIImage(data: data)
                                 
                             }
+                            else {
+                                self.userImage.image = UIImage(named: "bad-report-card")
+                            }
                             
                         }
                     }
+                    
+                    let usersName = object["name"] as! String
+                    let usersMajor = object["major"] as! String
+                    
+                    self.nameLabel.text = usersName
+                    self.majorLabel.text = usersMajor
+                    
+                    self.matchClassList = object["classes"] as! [String]
+                    print(self.matchClassList)
                     
                 }
             }
@@ -171,12 +196,19 @@ class SwipeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let logo = UIImage(named: "NavBarCrammer.jpg")
+        let imageView = UIImageView(image:logo)
+        self.navigationItem.titleView = imageView
+        
+        
+        navigationController!.navigationBar.barTintColor = UIColor(red: 77/255, green: 161/255, blue: 169/255, alpha: 1.0)
+        //navigationController?.navigationBar.barTintColor = UIColor.blueColor()
+        self.view.backgroundColor = UIColor(red: 242/255, green: 236/255, blue: 179/255, alpha: 1.0)
+        
         //swiping
         let gesture = UIPanGestureRecognizer(target: self, action: Selector("wasDragged:"))
         userImage.addGestureRecognizer(gesture)
         userImage.userInteractionEnabled = true
-        
-        
         
         PFGeoPoint.geoPointForCurrentLocationInBackground {
             
@@ -184,9 +216,16 @@ class SwipeViewController: UIViewController {
             
             if let geoPoint = geoPoint {
                 PFUser.currentUser()?["location"] = geoPoint
-                PFUser.currentUser()?.save()
+                PFUser.currentUser()?.saveInBackground()
             }
         }
+        
+        if (PFUser.currentUser()?.objectForKey("classes") != nil) {
+            print("Here Here Here")
+            myClassList = PFUser.currentUser()?.objectForKey("classes") as! [String]
+            print(myClassList)
+        }
+
         
         
         updateImage()

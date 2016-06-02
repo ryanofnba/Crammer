@@ -78,8 +78,6 @@ class ClassAdderTableViewController: UIViewController, UITableViewDelegate, UITa
         }
     }
 
-    
-
 
 
   

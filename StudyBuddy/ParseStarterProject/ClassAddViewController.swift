@@ -12,13 +12,16 @@ class ClassAddViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var txtTask: UITextField!
     @IBOutlet var txtDesc: UITextField!
+    @IBOutlet weak var subjectTextbox: UITextField!
+    @IBOutlet weak var classNumberTextBox: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //navigationController?.navigationBar.barTintColor = UIColor.blueColor()
         self.view.backgroundColor = UIColor(red: 242/255, green: 236/255, blue: 179/255, alpha: 1.0)
-
+        subjectTextbox.backgroundColor = UIColor.whiteColor()
+        classNumberTextBox.backgroundColor = UIColor.whiteColor()
         // Do any additional setup after loading the view.
     }
 

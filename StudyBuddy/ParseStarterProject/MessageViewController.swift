@@ -41,10 +41,6 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
         //add a tap gesture to tableview
         let tapGesture:UITapGestureRecognizer = UITapGestureRecognizer(target:self, action: "tableViewTapped")
         self.messageTableView.addGestureRecognizer(tapGesture)
-        //Add some sample data so we can see something
-        /*self.messageArray.append("Test 1")
-        self.messageArray.append("Test 2")
-        self.messageArray.append("Test 3")**/
         
         //Retreive messages from Parse
         self.retrieveMessages()
@@ -62,21 +58,15 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         //create PFObject
         var newMessageObject = PFObject(className:"Messages")
-        /*
-        var name = ""
-        //set text to the text of the message field and save PFObject
-        var query:PFQuery = PFQuery(className: "User")
-        query.findObjectsInBackgroundWithBlock{(results, error) -> Void in
-            for object in results! {
-                if object["objectId"] as! String == PFUser.currentUser()!.objectId! {
-                    name = object["name"]
-                }
-                
-            }
-        }**/
         
+        let currentUser = PFUser.currentUser()
         
-        newMessageObject.setObject(self.MessageTextField.text!, forKey: "Text")
+        let nameText = currentUser!["name"] as! String
+        var fullName = nameText.characters.split{$0 == " "}.map(String.init)
+
+        print (nameText)
+        
+        newMessageObject.setObject(fullName[0] + ": " + self.MessageTextField.text!, forKey: "Text")
         newMessageObject.setObject(PFUser.currentUser()!.objectId!, forKey: "sender")
         newMessageObject.setObject(receiverId, forKey: "receiver")
         newMessageObject.saveInBackgroundWithBlock(
@@ -171,6 +161,20 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Customize the cell
         cell.textLabel?.text = self.messageArray[indexPath.row]
         
+        // Name registers with the name
+        let message = cell.textLabel?.text as String!
+        var split = message.characters.split{$0 == " "}.map(String.init)
+        let name = split[0].substringToIndex(split[0].endIndex.predecessor())
+        
+        // current user's name
+        let currName = PFUser.currentUser()!["name"] as! String
+        var currArr = currName.characters.split{$0 == " "}.map(String.init)
+        let currFirstName = currArr[0].substringToIndex(split[0].endIndex.predecessor())
+        
+        // compare, if its equal, means the user's messages should be shifted right
+        if (name == currFirstName) {
+            //cell.textLabel?.textAlignment = NSTextAlignment.Right
+        }
         // Return the cell
         return cell
     }
@@ -178,15 +182,5 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messageArray.count
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -125,7 +125,18 @@ class SwipeViewController: UIViewController {
 //            print(myClassList)
 //        }
         
+        if let latitude = PFUser.currentUser()?["location"]?.latitude {
+            if let longitude = PFUser.currentUser()?["location"]?.longitude {
+                
+                query.whereKey("location", withinGeoBoxFromSouthwest: PFGeoPoint(latitude: latitude - 1, longitude: longitude - 1),
+                               toNortheast: PFGeoPoint(latitude: latitude + 1, longitude: longitude + 1))
+                
+            }
+        }
         
+        
+        
+        //Selection for course matching condition
         query.whereKey("classes", containedIn: myClassList)
         
         //query.whereKey("classes", containsString: "CPE123")

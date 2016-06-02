@@ -89,6 +89,7 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
         //force text field to end editing
         self.MessageTextField.endEditing(true)
     }
+    
     //MARK textField delegate methods
     func textFieldDidBeginEditing(textField: UITextField) {
 

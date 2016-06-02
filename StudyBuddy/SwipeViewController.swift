@@ -100,9 +100,17 @@ class SwipeViewController: UIViewController {
         var interestedIn = "male"
         
         
-        if PFUser.currentUser()!["interestedInGirl"]! as! Bool == true {
-            interestedIn = "female"
-        }
+//        if PFUser.currentUser()!["interestedInGirl"]! as! Bool == true {
+//            
+//            interestedIn = "female"
+//            
+//        }
+//        
+//        var isFemale = true
+//        
+//        if PFUser.currentUser()!["gender"]! as! String == "male" {
+//            isFemale = false
+//        }
         
         
         //if let acceptedUsers =

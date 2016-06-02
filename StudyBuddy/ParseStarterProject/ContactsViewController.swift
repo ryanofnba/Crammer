@@ -13,6 +13,7 @@ class ContactsViewController: UITableViewController {
     
     var usernames = [String]()
     var images = [UIImage]()
+    var objectId = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +27,7 @@ class ContactsViewController: UITableViewController {
                 
                 for result in results as! [PFUser] {
                     self.usernames.append(result["name"]! as! String)
-                    
+                    self.objectId.append(result.objectId! as! String)
                     let imageFile = result["image"] as! PFFile
                     
                     imageFile.getDataInBackgroundWithBlock {
@@ -35,17 +36,12 @@ class ContactsViewController: UITableViewController {
                         if error != nil {
                             print(error)
                         } else {
-                            
                             if let data = imageData {
-                                
                                 self.images.append(UIImage(data: data)!)
                                 self.tableView.reloadData()
-                                
                             }
-                            
                         }
                     }
-
                 }
                 print(results)
             }
@@ -84,5 +80,20 @@ class ContactsViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("segueToMessages" ,sender:self)
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if(segue.identifier == "segueToMessages") {
+            if let destination = segue.destinationViewController as? MessageViewController {
+                let path = tableView.indexPathForSelectedRow
+                let cell = tableView.cellForRowAtIndexPath(path!)
+                destination.receiverId = objectId[path!.row]
+            }
+        }
+        
+    }
 
 }

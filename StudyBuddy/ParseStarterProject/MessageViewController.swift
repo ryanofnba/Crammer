@@ -16,6 +16,7 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var DocViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var SendButton: UIButton!
     
+    var receiverId = ""
     @IBAction func showSwipeScreen(sender: AnyObject) {
         self.performSegueWithIdentifier("showSwipeScreen", sender: self)
     }
@@ -41,9 +42,13 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
         let tapGesture:UITapGestureRecognizer = UITapGestureRecognizer(target:self, action: "tableViewTapped")
         self.messageTableView.addGestureRecognizer(tapGesture)
         //Add some sample data so we can see something
-        self.messageArray.append("Test 1")
+        /*self.messageArray.append("Test 1")
         self.messageArray.append("Test 2")
-        self.messageArray.append("Test 3")
+        self.messageArray.append("Test 3")**/
+        
+        //Retreive messages from Parse
+        self.retrieveMessages()
+        
         
         navigationController!.navigationBar.barTintColor = UIColor(red: 77/255, green: 161/255, blue: 169/255, alpha: 1.0)
         //navigationController?.navigationBar.barTintColor = UIColor.blueColor()
@@ -52,15 +57,28 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     @IBAction func SendButtonTapped(sender: UIButton) {
         //send button is tapped
-        
         //call end editing method
         self.MessageTextField.endEditing(true)
         
         //create PFObject
         var newMessageObject = PFObject(className:"Messages")
-        
+        /*
+        var name = ""
         //set text to the text of the message field and save PFObject
+        var query:PFQuery = PFQuery(className: "User")
+        query.findObjectsInBackgroundWithBlock{(results, error) -> Void in
+            for object in results! {
+                if object["objectId"] as! String == PFUser.currentUser()!.objectId! {
+                    name = object["name"]
+                }
+                
+            }
+        }**/
+        
+        
         newMessageObject.setObject(self.MessageTextField.text!, forKey: "Text")
+        newMessageObject.setObject(PFUser.currentUser()!.objectId!, forKey: "sender")
+        newMessageObject.setObject(receiverId, forKey: "receiver")
         newMessageObject.saveInBackgroundWithBlock(
             {
                 (succeeded:Bool, error:NSError?) -> Void in
@@ -69,20 +87,46 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
                 } else {
                     NSLog(error!.description)
                 }
-                self.SendButton.enabled = true
-                self.MessageTextField.enabled = true
-                self.MessageTextField.text = ""
+                
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.SendButton.enabled = true
+                    self.MessageTextField.enabled = true
+                    self.MessageTextField.text = ""
+                }
             }
         )
-        /**newMessageObject.saveInBackgroundWithBlock {
-            (success:Bool, error:NSError!) -> Void in
-            if (success == true) {
-                // show latest messages and reload table
-            }
-            else {
+        
+        self.retrieveMessages()
+    }
+    
+    func retrieveMessages() {
+        // Create a new PFQuery
+        var query:PFQuery = PFQuery(className: "Messages")
+
+        // Call findobjectsinBackground
+        query.findObjectsInBackgroundWithBlock { (results, error) -> Void in
+            // Clear the messagesArray
+            self.messageArray = [String]()
+            
+            // Loop through the objects array
+            for messageObject in results! {
+                let curr = messageObject as! PFObject
+                if(curr["sender"] as! String == PFUser.currentUser()!.objectId! && curr["receiver"] as! String == self.receiverId) {
+                // Retreive the Text column value of each PFObject
+                    let messageText:String? = (messageObject as! PFObject)["Text"] as? String
                 
+                    // Assign it into our messagesArray
+                    if messageText != nil {
+                    self.messageArray.append(messageText!)
+                    }
+                }
             }
-        }*/
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                // Reload the tableView
+                self.messageTableView.reloadData()
+            }
+        }
     }
     
     func tableViewTapped() {
@@ -92,13 +136,14 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     //MARK textField delegate methods
     func textFieldDidBeginEditing(textField: UITextField) {
-
+        
         self.view.layoutIfNeeded()
         UIView.animateWithDuration(0.5, animations: {
             self.DocViewHeightConstraint.constant = 350
             self.view.layoutIfNeeded()
             
             }, completion: nil)
+        self.retrieveMessages()
     }
     
     func textFieldDidEndEditing(textField: UITextField) {
@@ -108,6 +153,7 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
             self.view.layoutIfNeeded()
             
             }, completion: nil)
+        self.retrieveMessages()
     }
     
     //MARK tableview delegate methods

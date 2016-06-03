@@ -26,7 +26,11 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController!.navigationBar.barTintColor = UIColor(red: 77/255, green: 161/255, blue: 169/255, alpha: 1.0)
+        //navigationController?.navigationBar.barTintColor = UIColor.blueColor()
+        self.messageTableView.backgroundColor = UIColor(red: 242/255, green: 236/255, blue: 179/255, alpha: 1.0)
         
+
         let logo = UIImage(named: "NavBarCrammer.jpg")
         let imageView = UIImageView(image:logo)
         self.navigationItem.titleView = imageView
@@ -54,6 +58,7 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBAction func SendButtonTapped(sender: UIButton) {
         //send button is tapped
         //call end editing method
+        self.retrieveMessages()
         self.MessageTextField.endEditing(true)
         
         //create PFObject
@@ -101,7 +106,8 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
             // Loop through the objects array
             for messageObject in results! {
                 let curr = messageObject as! PFObject
-                if(curr["sender"] as! String == PFUser.currentUser()!.objectId! && curr["receiver"] as! String == self.receiverId) {
+                if((curr["sender"] as! String == PFUser.currentUser()!.objectId! && curr["receiver"] as! String == self.receiverId) || (curr["sender"] as! String == self.receiverId && curr["receiver"] as! String == PFUser.currentUser()!.objectId!)) {
+                //if((curr["sender"] as! String == PFUser.currentUser()!.objectId! && curr["receiver"] as! String == self.receiverId) ) {
                 // Retreive the Text column value of each PFObject
                     let messageText:String? = (messageObject as! PFObject)["Text"] as? String
                 
@@ -158,10 +164,12 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Create a table cell
         let cell = self.messageTableView.dequeueReusableCellWithIdentifier("MessageCell")! as UITableViewCell
         
+        cell.backgroundColor = UIColor(red: 242/255, green: 236/255, blue: 179/255, alpha: 1.0)
         // Customize the cell
         cell.textLabel?.text = self.messageArray[indexPath.row]
         
         // Name registers with the name
+        
         let message = cell.textLabel?.text as String!
         var split = message.characters.split{$0 == " "}.map(String.init)
         let name = split[0].substringToIndex(split[0].endIndex.predecessor())
@@ -169,11 +177,11 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
         // current user's name
         let currName = PFUser.currentUser()!["name"] as! String
         var currArr = currName.characters.split{$0 == " "}.map(String.init)
-        let currFirstName = currArr[0].substringToIndex(split[0].endIndex.predecessor())
+        let currFirstName = currArr[0]
         
         // compare, if its equal, means the user's messages should be shifted right
         if (name == currFirstName) {
-            //cell.textLabel?.textAlignment = NSTextAlignment.Right
+            cell.textLabel?.textAlignment = NSTextAlignment.Right
         }
         // Return the cell
         return cell

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10112" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10083"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
@@ -179,10 +179,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Fy-x8-CV2">
-                                                    <rect key="frame" x="79" y="10" width="163" height="30"/>
+                                                    <rect key="frame" x="79" y="9" width="163" height="30"/>
                                                     <state key="normal" title="Edit Classes"/>
                                                     <connections>
-                                                        <segue destination="x5u-Tx-Uhg" kind="modal" id="ncF-S8-hhJ"/>
+                                                        <segue destination="x5u-Tx-Uhg" kind="modal" id="00c-2k-gci"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -538,7 +538,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Swipe left to reject, right to accept" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u31-4G-rIM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe left to reject, right to accept" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u31-4G-rIM">
                                 <rect key="frame" x="28" y="512" width="264" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="fam-5h-Ljx"/>
@@ -548,13 +548,13 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Ryan Huang" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66i-6N-joH">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ryan Huang" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66i-6N-joH">
                                 <rect key="frame" x="114" y="438" width="93" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bad-report-card" translatesAutoresizingMaskIntoConstraints="NO" id="8xl-g7-8P0">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bad-report-card" translatesAutoresizingMaskIntoConstraints="NO" id="8xl-g7-8P0">
                                 <rect key="frame" x="37" y="91" width="246" height="317"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="246" id="Cg7-st-hLO"/>
@@ -562,7 +562,7 @@
                                     <constraint firstAttribute="height" constant="317" id="odf-P4-AM1"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Computer Science" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJJ-zG-Uoy">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Computer Science" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJJ-zG-Uoy">
                                 <rect key="frame" x="89" y="467" width="142" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -878,6 +878,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="tblTasks" destination="Qda-9t-TRB" id="rps-iE-Nq2"/>
                         <segue destination="KP8-I6-60n" kind="modal" identifier="DoneAddingClasses" id="gkp-kr-re8"/>
                     </connections>
                 </viewController>
@@ -902,7 +903,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j7E-bM-HVs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="611" y="335"/>
+            <point key="canvasLocation" x="804" y="53"/>
         </scene>
         <!--Classes-->
         <scene sceneID="dWg-Ys-Z3J">
@@ -952,9 +953,9 @@
         <image name="signinwithfacebook.png" width="300" height="46"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WIQ-Qk-ykN"/>
-        <segue reference="AFq-Ec-nhU"/>
-        <segue reference="OWF-eZ-EWA"/>
-        <segue reference="ncF-S8-hhJ"/>
+        <segue reference="gkp-kr-re8"/>
+        <segue reference="00c-2k-gci"/>
+        <segue reference="hQd-Rt-ZIc"/>
+        <segue reference="s2O-KH-894"/>
     </inferredMetricsTieBreakers>
 </document>

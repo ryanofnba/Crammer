@@ -26,7 +26,11 @@ class profileSettings: UITableViewController {
             alert -> Void in
             
             let firstTextField = alertController.textFields![0] as UITextField
-            let secondTextField = alertController.textFields![1] as UITextField
+            
+            PFUser.currentUser()?["name"] = firstTextField.text
+            PFUser.currentUser()?.saveInBackground()
+            
+            self.nameField.text = PFUser.currentUser()?["name"] as! String
             
         })
         
@@ -54,6 +58,11 @@ class profileSettings: UITableViewController {
             
             let firstTextField = alertController.textFields![0] as UITextField
             
+            PFUser.currentUser()?["major"] = firstTextField.text
+            PFUser.currentUser()?.saveInBackground()
+            
+            self.majorField.text = PFUser.currentUser()?["major"] as! String
+            
         })
         
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: {
@@ -78,6 +87,11 @@ class profileSettings: UITableViewController {
             alert -> Void in
             
             let firstTextField = alertController.textFields![0] as UITextField
+            
+            PFUser.currentUser()?["age"] = firstTextField.text
+            PFUser.currentUser()?.saveInBackground()
+            
+            self.ageField.text = PFUser.currentUser()?["age"] as! String
             
         })
         
@@ -104,6 +118,11 @@ class profileSettings: UITableViewController {
             
             let firstTextField = alertController.textFields![0] as UITextField
             
+            PFUser.currentUser()?["year"] = firstTextField.text
+            PFUser.currentUser()?.saveInBackground()
+            
+            self.yearField.text = PFUser.currentUser()?["year"] as! String
+            
         })
         
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: {
@@ -128,6 +147,10 @@ class profileSettings: UITableViewController {
             alert -> Void in
             
             let firstTextField = alertController.textFields![0] as UITextField
+            
+            PFUser.currentUser()?["classes"] = firstTextField.text
+            PFUser.currentUser()?.saveInBackground()
+            
             
         })
         
@@ -158,7 +181,7 @@ class profileSettings: UITableViewController {
         
         print(currentUser?["displayName"])
         
-        if let nameText = currentUser!["displayName"] as? String {
+        if let nameText = currentUser!["name"] as? String {
             nameField.text = nameText
         }
         

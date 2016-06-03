@@ -127,29 +127,29 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableViewTapped() {
         //force text field to end editing
+        self.retrieveMessages()
         self.MessageTextField.endEditing(true)
     }
     
     //MARK textField delegate methods
     func textFieldDidBeginEditing(textField: UITextField) {
-        
+        self.retrieveMessages()
         self.view.layoutIfNeeded()
         UIView.animateWithDuration(0.5, animations: {
             self.DocViewHeightConstraint.constant = 350
             self.view.layoutIfNeeded()
             
             }, completion: nil)
-        self.retrieveMessages()
     }
     
     func textFieldDidEndEditing(textField: UITextField) {
+        self.retrieveMessages()
         self.view.layoutIfNeeded()
         UIView.animateWithDuration(0.5, animations: {
             self.DocViewHeightConstraint.constant = 60
             self.view.layoutIfNeeded()
             
             }, completion: nil)
-        self.retrieveMessages()
     }
     
     //MARK tableview delegate methods

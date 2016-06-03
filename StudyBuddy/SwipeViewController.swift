@@ -88,6 +88,9 @@ class SwipeViewController: UIViewController {
             updateImage()
             
         }
+        self.userImage.image = UIImage(named: "bad-report-card")
+        self.nameLabel.text = ""
+        self.majorLabel.text = ""
     }
 
     

@@ -12,11 +12,19 @@ import Parse
 class profileSettings: UITableViewController {
     let gradientLayer = CAGradientLayer()
     
+    @IBOutlet weak var cell1: UITableViewCell!
+    @IBOutlet weak var cell2: UIView!
+    @IBOutlet weak var cell3: UIView!
+    @IBOutlet weak var cell4: UITableViewCell!
+    @IBOutlet weak var cell5: UITableViewCell!
+    @IBOutlet weak var cell6: UIView!
     @IBOutlet weak var nameField: UILabel!
     @IBOutlet weak var majorField: UILabel!
     @IBOutlet weak var ageField: UILabel!
     @IBOutlet weak var yearField: UILabel!
+    @IBOutlet weak var profilePic: UIImageView!
     
+    //let imageFile = result["image"] as! PFFile
     
     @IBAction func editName(sender: AnyObject) {
         
@@ -196,6 +204,22 @@ class profileSettings: UITableViewController {
         //navigationController?.navigationBar.barTintColor = UIColor.blueColor()
         self.view.backgroundColor = UIColor(red: 242/255, green: 236/255, blue: 179/255, alpha: 1.0)
         
+        if let userPicture = PFUser.currentUser()?["image"] as? PFFile {
+            userPicture.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) -> Void in
+                if (error == nil) {
+                    self.profilePic.image = UIImage(data:imageData!)
+                }
+            }
+        }
+        
+        cell1.backgroundColor = UIColor(red: 242/255, green: 236/255, blue: 179/255, alpha: 1.0)
+        cell2.backgroundColor = UIColor(red: 242/255, green: 236/255, blue: 179/255, alpha: 1.0)
+        cell3.backgroundColor = UIColor(red: 242/255, green: 236/255, blue: 179/255, alpha: 1.0)
+        cell4.backgroundColor = UIColor(red: 242/255, green: 236/255, blue: 179/255, alpha: 1.0)
+        cell5.backgroundColor = UIColor(red: 242/255, green: 236/255, blue: 179/255, alpha: 1.0)
+        cell6.backgroundColor = UIColor(red: 242/255, green: 236/255, blue: 179/255, alpha: 1.0)
+        
+        //profilePic.image = PFUser.currentUser()!["image"] as! PFFile
         
     }
 }

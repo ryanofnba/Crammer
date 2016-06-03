@@ -30,6 +30,7 @@ class ContactsViewController: UITableViewController {
             if let results = results {
                 
                 for result in results as! [PFUser] {
+                    sleep(1)
                     self.usernames.append(result["name"]! as! String)
                     self.objectId.append(result.objectId! as! String)
                     let imageFile = result["image"] as! PFFile
@@ -74,7 +75,7 @@ class ContactsViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
-
+        cell.backgroundColor = UIColor(red: 242/255, green: 236/255, blue: 179/255, alpha: 1.0)
         cell.textLabel!.text = usernames[indexPath.row]
         
         if images.count > indexPath.row {
